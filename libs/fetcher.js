@@ -1,9 +1,9 @@
-export default async function fetcher(...args) {
-  const res = await fetch(...args);
-  return await res.json();
-}
+const fetcher = (...args) => axios.get(...args).then((res) => res.data);
+export default fetcher;
 
-// incase you wanna use axios as the fetcher
+// incase you wanna use fetch as the fetcher
 
-// const fetcher = (...args) => axios.get(...args).then((res) => res.data);
-// export default fetcher;
+// export default async function fetcher(...args) {
+//   const res = await fetch(...args);
+//   return await res.json();
+// }
