@@ -1,8 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## This is a Next.js + TailwindCSS + MongoDB + Mongoose + NextAuth + useSWR boilerplate code 
+This project was bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First clone then install dependencies then run the development server:
 
 ```bash
 npm run dev
@@ -18,6 +19,28 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## add a .env.local file at the root folder and add the folollowing contents
+
+
+
+```base
+MONGODB_URI=
+
+NEXTAUTH_URL
+NEXTAUTH_SECRET=
+
+GOOGLE_CLIENT_ID= 
+GOOGLE_CLIENT_SECRET= 
+JWT_SECRET=
+```
+1. Get the google client id and secret from the google console
+
+2. auto generate a NEXTAUTH_SECRET by running the command below on the terminal
+
+```
+openssl rand -base64 32
+
+```
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
