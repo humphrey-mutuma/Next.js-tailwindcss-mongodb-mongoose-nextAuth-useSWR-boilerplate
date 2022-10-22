@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useSession } from "next-auth/react";
 import { createContext, useContext } from "react";
 import useSWR from "swr";
@@ -17,7 +18,7 @@ export function UserWrapper({ children }) {
     console.log(userError);
   }
 
-  console.log("global data", userData);
+  console.log("context data", userData);
 
   return (
     <UserContext.Provider value={{ userData, mutateUser }}>

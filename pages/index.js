@@ -1,7 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
+import { useUserContext } from "../context/UserContext";
 
 const Home = () => {
+  const { userData } = useUserContext();
+  // this is some global data from MongoDB
+  console.log("global data", userData);
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -10,7 +14,7 @@ const Home = () => {
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-5xl font-bold">
+         <h1 className="text-5xl font-bold">
           Welcome to{" "}
           <a className="text-blue-600" href="https://nextjs.org">
             Next.js, Tailwindcss, MongoDB, Mongoose, Next-Auth, ContextAPI &&
