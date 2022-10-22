@@ -56,7 +56,7 @@ export default function NavBar() {
               </button>
             )}
 
-            <span onClick={signOut} className="flex relative h-10 w-10 ">
+            <span className="flex relative h-10 w-10 ">
               {status === "authenticated" ? (
                 <Image
                   class=" rounded-full object-cover "
