@@ -28,7 +28,7 @@ export default async function handler(req, res) {
           }
           // get the user email as an id from query params
           const userEmail = id;
-          // fetch one user whose email in the Database matches the email from the query
+           // fetch one user whose email in the Database matches the email from the query
           // fetch a user by email
           User.findOne({ email: userEmail })
             .lean()

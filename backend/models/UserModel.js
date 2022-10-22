@@ -16,6 +16,8 @@ const UserSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    // add other user properties like age, etc here
+
   },
   {
     timestamps: true, // add automatic timestamps

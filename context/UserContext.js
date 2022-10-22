@@ -1,10 +1,9 @@
 import { useSession } from "next-auth/react";
 import { createContext, useContext } from "react";
 import useSWR from "swr";
-import fetcher from "../libs/fetcher";
 
 const UserContext = createContext();
-
+const fetcher = (url) => axios.get(url).then((res) => res.data);
 export function UserWrapper({ children }) {
   const { data: session, status } = useSession();
 
@@ -17,6 +16,8 @@ export function UserWrapper({ children }) {
   if (userError) {
     console.log(userError);
   }
+
+  console.log("global data", userData);
 
   return (
     <UserContext.Provider value={{ userData, mutateUser }}>
