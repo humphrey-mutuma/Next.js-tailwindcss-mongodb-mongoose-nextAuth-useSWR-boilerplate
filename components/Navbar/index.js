@@ -7,8 +7,8 @@ import { useUserContext } from "../../context/UserContext";
 export default function NavBar() {
   const { data: session, status } = useSession();
   const { userData } = useUserContext();
-// this is some global data from MongoDB
-  console.log("global data",userData);
+  // this is some global data from MongoDB
+  console.log("global data", userData?.data);
 
   return (
     <div>
@@ -36,32 +36,26 @@ export default function NavBar() {
             </p>
             {status === "authenticated" ? (
               <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  signOut();
-                }}
+                onClick={() => signOut()}
                 className=" font-bold  text-blue-600 dark:text-blue-500 hover:underline"
               >
                 Sign Out
               </button>
             ) : (
               <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  signIn("google", { callbackUrl: "/" });
-                }}
+                onClick={() => signIn("google")}
                 className=" font-bold  text-blue-600 dark:text-blue-500 hover:underline"
               >
                 Sign In
               </button>
             )}
 
-            <span classNameName="flex relative h-10 w-10 ">
+            <span className="flex relative h-10 w-10 rounded-full">
               {status === "authenticated" ? (
-                <Image
-                  className=" rounded-full object-cover "
-                  src={session?.user?.image}
-                  alt="Vercel Logo"
+                <img
+                  className=" rounded-full object-cover h-10 w-10 "
+                  src={userData?.data?.image}
+                  alt=""
                   fill
                   sizes="100vw"
                 />
